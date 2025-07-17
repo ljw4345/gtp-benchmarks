@@ -31,9 +31,9 @@
       [(index? n) n]
       [else
        (error 'main "input must be a natural number; given ~e" n)]))
-  (define players (build-list k create-player))
-  (define dealer (create-dealer players))
-  (send dealer play-game))
+  (define players (build-list k create-player)) ;; --> create-player in player.rkt ;; sets up each player iteratively;; creates a list of player objects
+  (define dealer (create-dealer players)) ;; create-dealer in dealer.rkt;; retruns a dealer object
+  (send dealer play-game)) ;; play-game in dealer.rkt, in dealer class
 
 (define PLAYERS 10)
 (define LOOPS 1000)
